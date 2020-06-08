@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/static/img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Subscribe!</h1>
+            <span class="subheading">Or I won't include the Github repository</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        {% for entry in articles %}
+        <div class="post-preview">
+          <a href="{% url 'article-detail' pk=entry.pk %}">
+            <h2 class="post-title">
+              {{ entry.title }}
+            </h2>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="{{ entry.absolute_url }}">Me!</a>
+            {{ entry.publish_date }}</p>
+        </div>
+        <hr>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock %}
