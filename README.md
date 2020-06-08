@@ -14,4 +14,8 @@ Python3, virtualenv en pip installed on your system.
 7. Now run your server with ```python3 ./manage.py runserver```
 8. Congratz you have your Easy Peasy Lemon Squeezy Newsbot website running on localhost, port 8000.
 
-
+## Want to see the scraper in action?
+1. Delete de SQLite database
+2. Migrate the database with ```python3 ./manage.py migrate```
+3. Go to the "scraper" folder and run ```scrapy crawl wikinews```
+4. Now run your server with ```python3 ./manage.py runserver```
